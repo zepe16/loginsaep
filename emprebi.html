@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Empréstimos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sistema de Empréstimos</h2>
+    <button onclick="document.getElementById('modal-register').style.display='block'">Registrar Empréstimo</button>
+    <button onclick="document.getElementById('modal-search').style.display='block'">Consultar Empréstimo</button>
+    <button onclick="document.getElementById('modal-edit').style.display='block'">Editar Empréstimo</button>
+    <button onclick="document.getElementById('modal-delete').style.display='block'">Excluir Empréstimo</button>
+</div>
+
+<div id="modal-register" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modal-register').style.display='none'">&times;</span>
+        <h2>Registrar Empréstimo</h2>
+
+        <form>
+            Código do Empréstimo: <input type="text"><br><br>
+            Código do Livro: <input type="text"><br><br>
+            Matrícula do Estudante: <input type="text"><br><br>
+            Data da Retirada: <input type="date"><br><br>
+            Data Prevista de Entrega: <input type="date"><br><br>
+            <button type="button" onclick="document.getElementById('modal-register').style.display='none'">Registrar</button>
+        </form>
+    </div>
+</div>
+
+
+<div id="modal-search" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modal-search').style.display='none'">&times;</span>
+        <h2>Consultar Empréstimo</h2>
+
+        <form>
+            Insira o código do Empréstimo: <input type="text"><br><br>
+            <button type="button" onclick="document.getElementById('modal-search').style.display='none'">Consultar</button>
+        </form>
+    </div>
+</div>
+
+<div id="modal-edit" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modal-edit').style.display='none'">&times;</span>
+        <h2>Editar Empréstimo</h2>
+        
+        <form>
+            Código do Empréstimo a ser Editado: <input type="text"><br><br>
+            Novo Código do Livro: <input type="text"><br><br>
+            Nova Matrícula do Estudante: <input type="text"><br><br>
+            Nova Data da Retirada: <input type="date"><br><br>
+            Nova Data Prevista de Entrega: <input type="date"><br><br>
+            <button type="button" onclick="document.getElementById('modal-edit').style.display='none'">Salvar Alterações</button>
+        </form>
+    </div>
+</div>
+
+<div id="modal-delete" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modal-delete').style.display='none'">&times;</span>
+        <h2>Excluir Empréstimo</h2>
+
+        <form>
+            Código do Empréstimo a ser Excluído: <input type="text"><br><br>
+            <button type="button" onclick="document.getElementById('modal-delete').style.display='none'">Excluir</button>
+        </form>
+    </div>
+</div>
+<a href="index.html"><button>Sair</button></a>
+
+</body>
+</html>
